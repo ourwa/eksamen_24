@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasse</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="checkout.js"></script>
+  </head>
+
+
+
+<header>
+    <nav>
+      <form class="search-bar">
+        <input type="text" placeholder="søk her">
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <ul class="nav-links">
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="index.html#popular-products">Produkter</a></li>
+        <li class="logo"><a href="index.html">Logo</a></li>
+        <li><a href="index.html#popular-categories">Kategorier</a></li>
+        <li><a href="#site-footer">Kontakt oss</a></li>
+      </ul>
+      
+      <div class="header-icons">
+        <a href="checkout.html#customer-details-section"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <a href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Kasse -->
+  
+  
+  <section class="checkout">
+    <h1>Kasse</h1>
+
+    <!-- Shoppingbag -->
+    <section class="shopping-bag-section">
+      <h2>1. SHOPPINGBAGEN DIN</h2>
+      <ul class="shopping-bag-list">
+        <li class="shopping-bag-item">
+          <img src="https://via.placeholder.com/100x150" alt="Produktbilde">
+          <div class="product-info">
+            <p class="product-name">PRODUCT NAME</p>
+            <p class="product-price">Kr 1999</p>
+            <p class="product-color">Farge: beige</p>
+          </div>
+        </li>
+        <li class="shopping-bag-item">
+          <img src="https://via.placeholder.com/100x150" alt="Produktbilde">
+          <div class="product-info">
+            <p class="product-name">PRODUCT NAME</p>
+            <p class="product-price">Kr 1999</p>
+            <p class="product-color">Farge: beige</p>
+          </div>
+        </li>
+        <li class="shopping-bag-item">
+          <img src="https://via.placeholder.com/100x150" alt="Produktbilde">
+          <div class="product-info">
+            <p class="product-name">PRODUCT NAME</p>
+            <p class="product-price">Kr 1999</p>
+            <p class="product-color">Farge: beige</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+  
+    <!-- Customer Details -->
+<section class="customer-details-section">
+  <h2>2. DINE OPPLYSNINGER</h2>
+  <form class="customer-details-form" action="/submit-details" method="POST">
+    <fieldset>
+      <legend>Leveringsadresse</legend>
+      <label for="firstname">Fornavn</label>
+      <input type="text" id="firstname" name="firstname" placeholder="Nora*" required />
+      
+      <label for="lastname">Etternavn</label>
+      <input type="text" id="lastname" name="lastname" placeholder="Nordman*" required />
+    </fieldset>
+    <fieldset>
+      <label for="address">Gateadresse</label>
+      <input type="text" id="address" name="address" placeholder="BRA veien 4*" required />
+    </fieldset>
+    <fieldset>
+      <legend>Postadresse</legend>
+      <label for="postal-code">Postnummer</label>
+      <input type="text" id="postal-code" name="postal-code" placeholder="1752*" required pattern="\d{4}" title="Postnummer må være 4 sifre" />
+      
+      <label for="city">Poststed</label>
+      <input type="text" id="city" name="city" placeholder="Halden*" required />
+    </fieldset>
+    <fieldset class="form-actions">
+      <button type="submit" class="save-button">Lagre</button>
+      <button type="button" class="cancel-link">Avbryt</button>
+    </fieldset>
+  </form>
+</section>
+
+    
+
+    <!-- Levering -->
+    <section class="delivery-section">
+      <h2>3. LEVERING</h2>
+      <ul class="delivery-options">
+        <li>
+          <label>
+            <input type="radio" name="delivery" value="express-home">
+            <div class="option-details">
+              <p class="delivery-type">Express Hjemlevering</p>
+              <p class="delivery-time">3-4 Virkedager</p>
+            </div>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="delivery" value="express-package">
+            <div class="option-details">
+              <p class="delivery-type">Ekspress Pakke til utleveringssted</p>
+              <p class="delivery-time">1-3 Virkedager</p>
+            </div>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="delivery" value="standard-home">
+            <div class="option-details">
+              <p class="delivery-type">Standard Hjemlevering</p>
+              <p class="delivery-time">5-8 Virkedager</p>
+            </div>
+          </label>
+        </li>
+      </ul>
+    </section>
+    
+
+    <!-- Betaling -->
+    <section class="payment-section">
+      <h2>4. Betaling</h2>
+      <form>
+        <label for="card-number">Kortnummer</label>
+        <input type="text" id="card-number" placeholder="342342****4435" />
+    
+        <div class="row">
+          <div>
+            <label for="expiry-date">Utløpsdato</label>
+            <input type="text" id="expiry-date" placeholder="mm / dd / yyyy" />
+          </div>
+          <div>
+            <label for="cvc">CVC/CVV</label>
+            <input type="text" id="cvc" placeholder="CVC/CVV" />
+          </div>
+        </div>
+    
+        <div class="price">
+          <p>Å betale inkl. mva.</p>
+          <p class="price-amount">1 199 kr</p>
+        </div>
+    
+        <button type="submit">Fullfør kjøp</button>
+    
+        <p class="terms">
+          Du bekrefter herved at opplysningene og dokumentene du har oppgitt er korrekte og fullstendige. Leverandøren forbeholder seg retten til å heve eller avslutte avtaleforholdet dersom det foreligger uriktige eller ufullstendige opplysninger
+        </p>
+    
+        <label>
+          <input type="checkbox" /> Ja takk! Send nyhetsbrev til meg.
+          <input type="checkbox" /> jeg ønsker å motta tekstmeldinger med tilbud og nyheter.
+        </label>
+        
+      </form>
+    </section>
+    
+  <!-- Footer -->
+  <footer id="site-footer">
+    <section class="footer-logo">
+      <h2>Logo</h2>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+    </section>
+  
+    <section class="footer-contact">
+      <h3>KONTAKT</h3>
+      <ul>
+        <li><strong>Adresse:</strong> B R A Veien 4, 1757 Halden</li>
+        <li><strong>Telefon:</strong> 69 60 80 00</li>
+        <li><strong>E-post:</strong> halden@hiof.no</li>
+        <li><strong>Åpningstider:</strong> Stenger 15:00</li>
+      </ul>
+    </section>
+  
+    <section class="footer-links">
+      <h3>SNARVEIER</h3>
+      <ul>
+             <li><a href="index.html#popular-products">Produkter</a></li>
+        <li><a href="index.html#popular-categories">Kategorier</a></li>
+        <li><a href="index.html#site-footer">Kontakt oss</a></li>
+      </ul>
+    </section>
+  
+    <section class="footer-social">
+      <h3>SOSIALE MEDIER</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a></li>
+      </ul>
+    </section>
+  </footer>
+  
